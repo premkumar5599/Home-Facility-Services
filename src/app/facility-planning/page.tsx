@@ -1,14 +1,104 @@
 import Link from 'next/link';
 import { PageHero, CTA, Eyebrow } from '@/components/ui';
 import { pageMetadata } from '@/lib/seo';
-export const metadata = pageMetadata('Facility Service Enquiry Checklist', 'Prepare a facility service brief: location, work areas, staffing, schedules, equipment and quotation questions to discuss with Home Facility Services.', '/facility-planning/');
+
+export const metadata = pageMetadata(
+  'Facility Service Enquiry Checklist',
+  'Prepare a facility service brief: location, work areas, staffing, schedules, equipment and quotation questions to discuss with Home Facility Services.',
+  '/facility-planning/'
+);
+
 const sections = [
-  { title: 'Describe the premises', text: 'Start with the site address, type of business and approximate area. Identify the spaces you need covered and any areas with restricted access. For a multi-location requirement, list each site separately.', points: ['Facility type and location', 'Approximate area or number of work zones', 'Site contact and access arrangements'] },
-  { title: 'Choose the services and duties', text: 'A service name alone may not describe everything you need. List the tasks you want to discuss, the roles involved and how those responsibilities fit with your existing team.', points: ['Housekeeping, security, water wash, plumbing, electrical maintenance or staffing', 'Specific tasks and priorities', 'Existing personnel or contractors to coordinate with'] },
-  { title: 'Explain timing and staffing', text: 'Include your business hours and any preferred service windows. If you need personnel, indicate the number of roles, expected duration and shift pattern. Ask HFS to confirm availability for the proposed start date.', points: ['Operating hours and preferred work windows', 'Temporary or ongoing requirements', 'Proposed start date and expected duration'] },
-  { title: 'Clarify equipment and site requirements', text: 'Before comparing quotations, establish who supplies equipment, consumables and replacement materials. Explain site inductions, access procedures and any specialist requirements that affect the proposed work.', points: ['Equipment, consumables and materials', 'Site-specific procedures and induction', 'Required credentials or documentation for the assignment'] },
-  { title: 'Agree what the quotation covers', text: 'Compare the proposed scope as well as the cost. Ask about staffing, supervision or reporting arrangements, exclusions, scheduling and payment terms. Confirm responsibilities with the team before treating an enquiry as a service booking.', points: ['Included duties and exclusions', 'Personnel, schedule and reporting contact', 'Commercial terms and how scope changes are handled'] },
+  {
+    title: 'Describe the premises',
+    text: 'Start with the site address, type of business and approximate area. Identify the spaces you need covered and any areas with restricted access. For a multi-location requirement, list each site separately.',
+    points: ['Facility type and location', 'Approximate area or number of work zones', 'Site contact and access arrangements'],
+  },
+  {
+    title: 'Choose the services and duties',
+    text: 'A service name alone may not describe everything you need. List the tasks you want to discuss, the roles involved and how those responsibilities fit with your existing team.',
+    points: [
+      'Housekeeping, security, water wash, plumbing, electrical maintenance or staffing',
+      'Specific tasks and priorities',
+      'Existing personnel or contractors to coordinate with',
+    ],
+  },
+  {
+    title: 'Explain timing and staffing',
+    text: 'Include your business hours and any preferred service windows. If you need personnel, indicate the number of roles, expected duration and shift pattern. Ask HFS to confirm availability for the proposed start date.',
+    points: [
+      'Operating hours and preferred work windows',
+      'Temporary or ongoing requirements',
+      'Proposed start date and expected duration',
+    ],
+  },
+  {
+    title: 'Clarify equipment and site requirements',
+    text: 'Before comparing quotations, establish who supplies equipment, consumables and replacement materials. Explain site inductions, access procedures and any specialist requirements that affect the proposed work.',
+    points: [
+      'Equipment, consumables and materials',
+      'Site-specific procedures and induction',
+      'Required credentials or documentation for the assignment',
+    ],
+  },
+  {
+    title: 'Agree what the quotation covers',
+    text: 'Compare the proposed scope as well as the cost. Ask about staffing, supervision or reporting arrangements, exclusions, scheduling and payment terms. Confirm responsibilities with the team before treating an enquiry as a service booking.',
+    points: [
+      'Included duties and exclusions',
+      'Personnel, schedule and reporting contact',
+      'Commercial terms and how scope changes are handled',
+    ],
+  },
 ];
+
 export default function FacilityPlanning() {
-  return <><PageHero label="Facility planning" title="A clearer brief. A more useful conversation." description="Use this enquiry checklist to explain your facility needs and ask the right questions before agreeing a service." /><section className="section"><div className="container guide-layout"><article><Eyebrow>PLANNING YOUR ENQUIRY</Eyebrow><p className="section-intro">You do not need a finished specification to contact HFS. The details below help the team understand your premises and discuss a service scope. Start with what you know and identify the points you still need help clarifying.</p>{sections.map((section, index) => <section className="guide-step" key={section.title}><span>0{index + 1}</span><h2>{section.title}</h2><p>{section.text}</p><ul className="planning-list">{section.points.map(point => <li key={point}>{point}</li>)}</ul></section>)}</article><aside className="service-aside"><h3>Explore the services</h3><Link href="/services/housekeeping/">Housekeeping</Link><Link href="/services/security/">Security personnel</Link><Link href="/services/water-wash/">Vehicle water wash</Link><Link href="/services/plumbing/">Plumbing support</Link><Link href="/services/electrical-maintenance/">Electrical maintenance</Link><Link href="/services/staffing/">Staffing & outsourcing</Link><p>For HFS company details and named contacts, <Link href="/about/">visit About HFS</Link>.</p></aside></div></section><CTA /></>;
+  return (
+    <>
+      <PageHero
+        label="Facility planning"
+        title="A clearer brief. A more useful conversation."
+        description="Use this enquiry checklist to explain your facility needs and ask the right questions before agreeing a service."
+      />
+      <section className="section">
+        <div className="container guide-layout">
+          <article className="fade-up">
+            <Eyebrow>PLANNING YOUR ENQUIRY</Eyebrow>
+            <p className="section-intro">
+              You do not need a finished specification to contact HFS. The details below help the team understand your premises and discuss a service scope. Start with what you know and identify the points you still need help clarifying.
+            </p>
+            {sections.map((section, index) => (
+              <section
+                className="guide-step fade-up"
+                key={section.title}
+                style={{ transitionDelay: `${index * 80}ms` }}
+              >
+                <span>0{index + 1}</span>
+                <h2>{section.title}</h2>
+                <p>{section.text}</p>
+                <ul className="planning-list">
+                  {section.points.map(point => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </article>
+          <aside className="service-aside fade-up" style={{ transitionDelay: '200ms' }}>
+            <h3>Explore the services</h3>
+            <Link href="/services/housekeeping/">Housekeeping</Link>
+            <Link href="/services/security/">Security personnel</Link>
+            <Link href="/services/water-wash/">Vehicle water wash</Link>
+            <Link href="/services/plumbing/">Plumbing support</Link>
+            <Link href="/services/electrical-maintenance/">Electrical maintenance</Link>
+            <Link href="/services/staffing/">Staffing & outsourcing</Link>
+            <p>
+              For HFS company details and named contacts, <Link href="/about/">visit About HFS</Link>.
+            </p>
+          </aside>
+        </div>
+      </section>
+      <CTA />
+    </>
+  );
 }

@@ -5,11 +5,178 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowDown, ArrowUpRight, Check, ShieldCheck, Sparkles } from 'lucide-react';
 import { ButtonLink, CTA, Eyebrow, ServiceCard } from '@/components/ui';
-import { clients, services, steps } from '@/lib/data';
-export const metadata = pageMetadata('Facility Management Services in Chennai', 'Home Facility Services provides housekeeping, security, water wash, plumbing, electrical maintenance and staffing support. Discuss your Chennai facility needs.', '/');
-export default function Home() { return <>
-<section className="hero"><div className="container hero-grid"><div className="hero-copy"><Eyebrow>FACILITY MANAGEMENT SERVICES IN CHENNAI</Eyebrow><h1>Great spaces.<br />Better working<br /><span>days.</span><span className="heading-dot">✳</span></h1><p>Housekeeping, security, maintenance and staffing support from Home Facility Services, Chennai. We take care of your premises so you can focus on your business.</p><div className="hero-actions"><ButtonLink href="/contact/">Find your facility solution</ButtonLink><Link className="circle-link" href="/services/" aria-label="Explore services"><ArrowDown size={20} /></Link></div><div className="hero-proof"><span><Check size={14} /> Trained people</span><span><Check size={14} /> Flexible services</span><span><Check size={14} /> Chennai based</span></div></div><div className="hero-art"><div className="art-caption"><span className="live-dot" /> CARE IN EVERY DETAIL <span>HFS / 01</span></div><div className="hero-image"><Image src="/assets/profile-image2.jpeg" alt="Housekeeping professional with cleaning equipment from the HFS company profile" fill priority sizes="(max-width: 750px) 90vw, 45vw" /><div className="image-label"><Sparkles size={15} /> Spaces that feel cared for.</div></div><div className="hero-art-footer"><div><span>ONE PARTNER, EVERYDAY SUPPORT</span><strong>Good people. Great care.</strong></div><ArrowUpRight size={30} strokeWidth={1} /></div><div className="floating-stat"><ShieldCheck size={22} /><strong>350<span>+</span></strong><p>people behind<br />better spaces*</p></div></div></div><div className="container sectors-strip"><span>SUPPORTING YOUR EVERYDAY</span><div>Offices <i /> Healthcare <i /> Automotive <i /> Hospitality <i /> Residential</div></div></section>
-<section className="section"><div className="container"><div className="section-heading"><div><Eyebrow>WHAT WE TAKE CARE OF</Eyebrow><h2>All the essentials.<br /><span className="muted-heading">One dependable partner.</span></h2></div><div><p>People and practical expertise to keep your premises working at their best.</p><Link className="text-link" href="/services/">Discover all services <ArrowUpRight size={17} /></Link></div></div><div className="services-grid">{services.map((s, i) => <ServiceCard key={s.slug} service={s} index={i} />)}</div></div></section>
-<section className="section approach-section"><div className="container approach-grid"><div><Eyebrow>THE HFS WAY</Eyebrow><h2>Built around your space.<br /><span className="muted-heading">Focused on your people.</span></h2><p className="section-intro">A well-managed facility makes a difference to everyone who walks through the door. We’re here to make that happen.</p><ButtonLink href="/about/" secondary>Get to know HFS</ButtonLink><p className="stat-footnote">*Approximate workforce stated in the supplied company profile.</p></div><div className="steps">{steps.map((s, i) => <div className="step" key={s.title}><span>0{i + 1}</span><div><h3>{s.title}</h3><p>{s.text}</p></div></div>)}</div></div></section>
-<section className="section"><div className="container"><div className="section-heading"><div><Eyebrow>IN GOOD COMPANY</Eyebrow><h2>Across industries.<br />Around your needs.</h2></div><Link className="text-link" href="/clients/">Explore our client portfolio <ArrowUpRight size={17} /></Link></div><div className="logo-strip">{clients.slice(0, 6).map(c => <div key={c.name}><Image src={`/assets/${c.image}`} alt={c.name} width={140} height={85} /></div>)}</div></div></section><section className="section soft-section"><div className="container split-heading"><div><Eyebrow>START WITH A CLEAR BRIEF</Eyebrow><h2>Planning facility support?<br />Here’s what to prepare.</h2></div><div><p className="section-intro">Your location, work areas, staffing needs and schedule help define the right service. Our checklist explains what to share and what to clarify in a quotation.</p><ButtonLink href="/facility-planning/" secondary>View the enquiry checklist</ButtonLink></div></div></section><FAQ title="Facility services: your questions answered" items={generalFAQs} /><CTA />
-</>; }
+import { services, steps } from '@/lib/data';
+import { ScrollReveal } from '@/components/scroll-reveal';
+import { AnimatedCounter } from '@/components/animated-counter';
+import { LogoMarquee } from '@/components/logo-marquee';
+
+export const metadata = pageMetadata(
+  'Facility Management Services in Chennai',
+  'Home Facility Services provides housekeeping, security, water wash, plumbing, electrical maintenance and staffing support. Discuss your Chennai facility needs.',
+  '/'
+);
+
+export default function Home() {
+  return (
+    <>
+      <section className="hero">
+        <div className="container hero-grid">
+          <div className="hero-copy">
+            <Eyebrow>FACILITY MANAGEMENT SERVICES IN CHENNAI</Eyebrow>
+            <h1>
+              Great spaces.<br />
+              Better working<br />
+              <span>days.</span>
+              <span className="heading-dot">✳</span>
+            </h1>
+            <p>
+              Housekeeping, security, maintenance and staffing support from Home Facility Services, Chennai. We take care of your premises so you can focus on your business.
+            </p>
+            <div className="hero-actions">
+              <ButtonLink href="/contact/">Find your facility solution</ButtonLink>
+              <Link className="circle-link" href="/services/" aria-label="Explore services">
+                <ArrowDown size={20} />
+              </Link>
+            </div>
+            <div className="hero-proof">
+              <span><Check size={14} /> Trained people</span>
+              <span><Check size={14} /> Flexible services</span>
+              <span><Check size={14} /> Chennai based</span>
+            </div>
+          </div>
+          <div className="hero-art">
+            <div className="art-caption">
+              <span className="live-dot" /> CARE IN EVERY DETAIL <span>HFS / 01</span>
+            </div>
+            <div className="hero-image">
+              <Image
+                src="/assets/profile-image2.jpeg"
+                alt="Housekeeping professional with cleaning equipment from the HFS company profile"
+                fill
+                priority
+                sizes="(max-width: 750px) 90vw, 45vw"
+              />
+              <div className="image-label">
+                <Sparkles size={15} /> Spaces that feel cared for.
+              </div>
+            </div>
+            <div className="hero-art-footer">
+              <div>
+                <span>ONE PARTNER, EVERYDAY SUPPORT</span>
+                <strong>Good people. Great care.</strong>
+              </div>
+              <ArrowUpRight size={30} strokeWidth={1} />
+            </div>
+            <div className="floating-stat">
+              <ShieldCheck size={22} />
+              <strong><AnimatedCounter value={350} suffix="+" /></strong>
+              <p>people behind<br />better spaces*</p>
+            </div>
+          </div>
+        </div>
+        <div className="container sectors-strip">
+          <span>SUPPORTING YOUR EVERYDAY</span>
+          <div>Offices <i /> Healthcare <i /> Automotive <i /> Hospitality <i /> Residential</div>
+        </div>
+      </section>
+
+      <ScrollReveal>
+        <section className="section">
+          <div className="container">
+            <div className="section-heading fade-up">
+              <div>
+                <Eyebrow>WHAT WE TAKE CARE OF</Eyebrow>
+                <h2>All the essentials.<br /><span className="muted-heading">One dependable partner.</span></h2>
+              </div>
+              <div>
+                <p>People and practical expertise to keep your premises working at their best.</p>
+                <Link className="text-link" href="/services/">
+                  Discover all services <ArrowUpRight size={17} />
+                </Link>
+              </div>
+            </div>
+            <div className="services-grid">
+              {services.map((s, i) => (
+                <div className="fade-up" key={s.slug} style={{ transitionDelay: `${i * 50}ms` }}>
+                  <ServiceCard service={s} index={i} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <section className="section approach-section">
+          <div className="container approach-grid">
+            <div className="fade-up">
+              <Eyebrow>THE HFS WAY</Eyebrow>
+              <h2>Built around your space.<br /><span className="muted-heading">Focused on your people.</span></h2>
+              <p className="section-intro">
+                A well-managed facility makes a difference to everyone who walks through the door. We&apos;re here to make that happen.
+              </p>
+              <ButtonLink href="/about/" secondary>Get to know HFS</ButtonLink>
+              <p className="stat-footnote">*Approximate workforce stated in the supplied company profile.</p>
+            </div>
+            <div className="steps">
+              {steps.map((s, i) => (
+                <div className="step fade-up" key={s.title} style={{ transitionDelay: `${i * 60}ms` }}>
+                  <span>0{i + 1}</span>
+                  <div>
+                    <h3>{s.title}</h3>
+                    <p>{s.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <section className="section">
+          <div className="container">
+            <div className="section-heading fade-up">
+              <div>
+                <Eyebrow>IN GOOD COMPANY</Eyebrow>
+                <h2>Across industries.<br />Around your needs.</h2>
+              </div>
+              <Link className="text-link" href="/clients/">
+                Explore our client portfolio <ArrowUpRight size={17} />
+              </Link>
+            </div>
+            <div className="fade-up">
+              <LogoMarquee />
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <section className="section soft-section">
+          <div className="container split-heading fade-up">
+            <div>
+              <Eyebrow>START WITH A CLEAR BRIEF</Eyebrow>
+              <h2>Planning facility support?<br />Here&apos;s what to prepare.</h2>
+            </div>
+            <div>
+              <p className="section-intro">
+                Your location, work areas, staffing needs and schedule help define the right service. Our checklist explains what to share and what to clarify in a quotation.
+              </p>
+              <ButtonLink href="/facility-planning/" secondary>
+                View the enquiry checklist
+              </ButtonLink>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      <div className="fade-up">
+        <FAQ title="Facility services: your questions answered" items={generalFAQs} />
+      </div>
+      <div className="fade-up">
+        <CTA />
+      </div>
+    </>
+  );
+}
