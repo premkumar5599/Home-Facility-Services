@@ -5,6 +5,7 @@ node_modules/
 .next/
 out/
 dist/
+Client documents/
 
 # TypeScript build info
 tsconfig.tsbuildinfo

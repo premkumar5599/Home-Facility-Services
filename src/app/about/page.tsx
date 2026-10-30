@@ -1,10 +1,11 @@
+import { CompanyStats } from '@/components/company-stats';
 import { CompanyPeople } from '@/components/business-content';
 import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
-import { HeartHandshake, BadgeCheck, Users, Leaf } from 'lucide-react';
+import { BadgeCheck, Users, Leaf } from 'lucide-react';
 import { CTA, Eyebrow, PageHero } from '@/components/ui';
 import { ScrollReveal } from '@/components/scroll-reveal';
-import { AnimatedCounter } from '@/components/animated-counter';
+import Image from 'next/image';
 
 export const metadata: Metadata = pageMetadata(
   'About HFS: Chennai Facility Services',
@@ -18,17 +19,16 @@ export default function About() {
       <PageHero
         label="About HFS"
         title="A Chennai facility services partner, built around people."
-        description="We're a Chennai-based facility services partner with a simple focus: taking care of your premises and the people who use them."
+        description="We provide facility services across Chennai, Vellore and Hosur, supported by 400+ manpower across 120+ locations for 30+ clients."
       />
+      <CompanyStats />
       <ScrollReveal>
         <section className="section">
           <div className="container about-story">
-            <div className="story-panel fade-up">
-              <span>HOME FACILITY SERVICES</span>
-              <HeartHandshake size={70} strokeWidth={1} />
-              <h2>Care is at<br />the heart of<br /><em>what we do.</em></h2>
-              <span>PEOPLE · PROFESSIONALISM · PURPOSE</span>
-            </div>
+            <figure className="about-story-photo home-reveal">
+              <Image src="/assets/inner/workplace-lobby.jpg" alt="Bright, well maintained workplace lobby" fill sizes="(max-width: 750px) 90vw, 40vw" />
+              <figcaption>Illustrative workplace photography</figcaption>
+            </figure>
             <div className="fade-up">
               <Eyebrow>OUR STORY &amp; APPROACH</Eyebrow>
               <h2>A partner in your<br />everyday operations.</h2>
@@ -38,21 +38,7 @@ export default function About() {
               <p className="muted">
                 Our teams work closely with customers to understand on-site demands. Supported by management and technical personnel, we focus on practical solutions that help businesses save time and effort while maintaining a welcoming working environment.
               </p>
-              <div className="about-stats">
-                <div>
-                  <strong><AnimatedCounter value={350} suffix="+" /></strong>
-                  <span>Approximate workforce*</span>
-                </div>
-                <div>
-                  <strong><AnimatedCounter value={6} suffix="" duration={800} /></strong>
-                  <span>Core service areas</span>
-                </div>
-                <div>
-                  <strong>Chennai</strong>
-                  <span>Our home base</span>
-                </div>
-              </div>
-              <p className="stat-footnote">*As stated in the supplied company profile.</p>
+              <p>Our services are available in Chennai, Vellore and Hosur.</p>
             </div>
           </div>
         </section>

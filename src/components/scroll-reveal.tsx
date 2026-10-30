@@ -11,7 +11,7 @@ export function ScrollAnimationProvider() {
 
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const targets = document.querySelectorAll<HTMLElement>('.fade-up:not(.in-view), .fade-in:not(.in-view)');
+    const targets = document.querySelectorAll<HTMLElement>('.fade-up:not(.in-view), .fade-in:not(.in-view), .home-reveal:not(.in-view)');
 
     if (prefersReduced) {
       targets.forEach(el => el.classList.add('in-view'));

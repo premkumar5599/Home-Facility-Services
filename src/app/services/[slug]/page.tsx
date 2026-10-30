@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { services, steps } from '@/lib/data';
+import { services, steps, serviceCities, serviceAreaLabel } from '@/lib/data';
 import { ButtonLink, CheckItem, Eyebrow, CTA } from '@/components/ui';
 
 export function generateStaticParams() {
@@ -21,8 +21,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const service = services.find(s => s.slug === slug);
   return service
     ? pageMetadata(
-        `${service.title} in Chennai`,
-        `${service.description} Contact Home Facility Services in Chennai to discuss scope, staffing and availability.`,
+        `${service.title} in Chennai, Vellore & Hosur`,
+        `${service.description} Contact Home Facility Services in Chennai, Vellore and Hosur to discuss scope and availability.`,
         `/services/${slug}/`
       )
     : { title: 'Service not found', robots: { index: false } };
@@ -44,7 +44,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
           description: service.description,
           url: absoluteUrl(`/services/${service.slug}/`),
           provider: { '@id': absoluteUrl('/#business') },
-          areaServed: { '@type': 'City', name: 'Chennai' },
+          areaServed: serviceCities.map(name => ({ '@type': 'City', name })),
         }}
       />
       <BreadcrumbSchema
@@ -66,19 +66,20 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
           <div className="detail-grid">
             <div>
               <Eyebrow>{service.title}</Eyebrow>
-              <h1>{service.title}<br />in Chennai.</h1>
+              <h1>{service.title}<br />in {serviceAreaLabel}.</h1>
               <p>{service.description}</p>
               <ButtonLink href={`/contact/?service=${service.slug}`}>Discuss {service.title.toLowerCase()}</ButtonLink>
             </div>
-            <div className="detail-image">
+            <figure className="detail-photo">
               <Image
                 src={`/assets/${service.image}`}
-                alt={`${service.title} illustration from the HFS profile`}
+                alt={`Illustrative photo for ${service.title.toLowerCase()} services`}
                 fill
                 sizes="(max-width: 750px) 90vw, 40vw"
                 priority
               />
-            </div>
+              <figcaption>Illustrative service photography</figcaption>
+            </figure>
           </div>
         </div>
       </section>

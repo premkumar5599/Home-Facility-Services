@@ -127,3 +127,80 @@
 @media(max-width:1000px){.partner-grid{grid-template-columns:1fr 1fr}.faq-layout,.guide-layout{gap:35px}}
 @media(max-width:750px){.faq-layout,.guide-layout{grid-template-columns:1fr}.partner-card{padding:20px}.partner-card h3{font-size:19px}.company-record{padding:22px}.company-record dl>div{grid-template-columns:1fr;gap:5px}.detail-content h2{font-size:29px}.hero-copy .eyebrow{font-size:9px;letter-spacing:.09em}}
 @media(max-width:390px){.partner-grid{grid-template-columns:1fr}}
+
+/* Client-approved company details and founder portraits. */
+.header-contacts{display:flex;align-items:center;gap:22px}.header-contacts a{white-space:nowrap}
+.company-numbers{background:var(--navy,var(--ink));color:white;padding:30px 0}.company-numbers-grid{display:grid;grid-template-columns:repeat(3,1fr);text-align:center}.company-numbers-grid>div+div{border-left:1px solid #ffffff35}.company-numbers strong{font-size:36px;line-height:1.2;display:block;font-weight:600}.company-numbers span{display:block;font-size:13px;margin-top:7px}.company-numbers p{text-align:center;color:#dce7e2;font-size:14px;margin:22px 0 0}.company-numbers p strong{display:inline;font-size:14px;font-weight:500}
+.founder-photo{aspect-ratio:4/5;overflow:hidden;border-radius:9px;background:#e5e8eb;margin:0 0 20px}.founder-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}.partner-card{min-width:0}.partner-card>a{overflow-wrap:anywhere}.partner-card h3{line-height:1.4}
+@media(max-width:750px){.topbar .container{gap:10px;align-items:center}.header-contacts{gap:8px 15px;flex-wrap:wrap;justify-content:flex-end;font-size:10px}.company-numbers strong{font-size:29px}.company-numbers span{font-size:12px}.founder-photo{border-radius:6px}.partner-card{padding:15px}.partner-card h3{font-size:17px}.partner-card a{font-size:10px}}
+@media(max-width:390px){.topbar .container>span{max-width:90px}.header-contacts{flex-direction:column;gap:3px;align-items:flex-end}.company-numbers strong{font-size:26px}}
+
+/* Homepage figures sit within the hero copy. */
+.company-numbers-hero{margin-top:28px;padding:22px 12px;border-radius:6px;width:100%}.company-numbers-hero strong{font-size:30px}.company-numbers-hero span{font-size:12px}
+@media(max-width:390px){.company-numbers-hero{padding:18px 8px}.company-numbers-hero strong{font-size:25px}.company-numbers-hero span{font-size:11px}}
+
+/* Service cards use their names and details without decorative icon tiles. */
+.service-card .card-top{justify-content:flex-start;margin-bottom:14px}.service-card .card-number{color:var(--green);font-size:12px;font-weight:700}.service-card.service-dark .card-number{color:var(--lime)}
+
+/* Keep the full company name on one line. */
+.brand span{white-space:nowrap}
+
+/* Align every service card and make its number legible on the dark surface. */
+.services-grid>div{display:flex;min-width:0}
+.services-grid .service-card{height:100%;min-height:270px}
+.services-grid .service-card .card-number{color:#d9edab;font-size:15px;font-weight:700;line-height:1.2}
+@media(max-width:750px){.services-grid .service-card{min-height:245px}}
+@media(max-width:390px){.services-grid .service-card{min-height:0}}
+
+/* Home page photography and service entry points. */
+.hero-grid{gap:58px}
+.home-hero-visual{position:relative;min-height:560px;padding:0 0 56px 36px}
+.home-hero-main{position:relative;height:505px;overflow:hidden;border-radius:10px;background:#dce4df}
+.home-hero-main img,.home-hero-inset img,.home-photo-card img{object-fit:cover}
+.home-hero-main img{object-position:48% center}
+.home-hero-inset{position:absolute;left:0;bottom:18px;width:42%;height:220px;border:8px solid var(--paper);border-radius:12px;overflow:hidden;background:#e5e8e5;box-shadow:0 18px 40px #142f3624}
+.home-photo-note{position:absolute;right:0;bottom:20px;margin:0;font-size:10px;color:var(--muted)}
+.home-photo-services{padding-top:82px}
+.home-photo-services .section-heading>p{max-width:330px;margin:0;font-size:14px}
+.home-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.home-photo-card{position:relative;display:block;height:285px;overflow:hidden;border-radius:9px;background:#e4e9e4}
+.home-photo-card img{transition:transform .35s ease}
+.home-photo-card:hover img{transform:scale(1.04)}
+.home-photo-card:nth-child(2) img{object-position:center}
+.home-photo-card::after{content:"";position:absolute;inset:38% 0 0;background:linear-gradient(transparent,#102a31cf)}
+.home-photo-card small{position:absolute;z-index:1;top:16px;left:18px;padding:5px 8px;border-radius:4px;background:#102a31d9;color:white;font-size:10px;font-weight:700;letter-spacing:.04em}
+.home-photo-card span{position:absolute;z-index:1;left:22px;right:22px;bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;color:white}
+.home-photo-card strong{font-size:20px;font-weight:600;line-height:1.2;letter-spacing:-.025em}
+.home-photo-disclaimer{margin:15px 0 0;font-size:11px;color:var(--muted)}
+@media(max-width:1050px){.hero-grid{gap:35px}.home-hero-visual{min-height:460px;padding-left:20px}.home-hero-main{height:410px}.home-hero-inset{height:170px}}
+@media(max-width:750px){.home-hero-visual{width:min(100%,520px);min-height:415px;padding:0 0 36px 18px}.home-hero-main{height:380px}.home-hero-inset{height:150px;bottom:15px}.home-photo-services{padding-top:64px}.home-photo-services .section-heading>p{margin-top:20px}.home-photo-grid{grid-template-columns:1fr 1fr;gap:12px}.home-photo-card{height:230px}.home-photo-card:last-child{grid-column:1/-1;height:210px}.home-photo-card strong{font-size:17px}.home-photo-card span{left:16px;right:16px;bottom:15px}}
+@media(max-width:390px){.home-hero-visual{min-height:350px}.home-hero-main{height:320px}.home-hero-inset{height:120px}.home-photo-card{height:190px}.home-photo-card:last-child{height:190px}.home-photo-card strong{font-size:15px}.home-photo-card span{left:12px;right:12px;bottom:12px}}
+
+/* Scroll motion starts from visible content, so slow or disabled scripts leave the page readable. */
+@keyframes homeReveal{from{opacity:.55;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.home-reveal.in-view{animation:homeReveal .6s cubic-bezier(.2,.75,.2,1) both}
+.home-photo-grid .home-reveal:nth-child(2),.services-grid .home-reveal:nth-child(2){animation-delay:.08s}
+.home-photo-grid .home-reveal:nth-child(3),.services-grid .home-reveal:nth-child(3){animation-delay:.16s}
+@media(prefers-reduced-motion:reduce){.home-reveal.in-view{animation:none}}
+
+/* Photography across the inner pages. */
+.service-media-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.service-media-card{display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#fff;transition:transform .25s,box-shadow .25s}
+.service-media-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px #142f3614}
+.service-media-image{position:relative;height:215px;background:#e4e9e4;overflow:hidden}
+.service-media-image img{object-fit:cover;transition:transform .35s}
+.service-media-card:hover img{transform:scale(1.04)}
+.service-media-body{display:flex;flex-direction:column;flex:1;padding:24px}
+.service-media-number{font-size:11px;font-weight:700;letter-spacing:.07em;color:var(--green)}
+.service-media-body h2{font-size:23px;font-weight:600;margin:14px 0 10px}
+.service-media-body p{font-size:13px;line-height:1.7;margin:0 0 24px}
+.service-media-link{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:13px;border-top:1px solid var(--line);font-size:12px;font-weight:600}
+.service-photo-note{font-size:11px;margin-top:18px;color:var(--muted)}
+.detail-photo{position:relative;height:385px;margin:0;border-radius:12px;overflow:hidden;background:#e4e9e4}
+.detail-photo img{object-fit:cover}
+.detail-photo figcaption,.about-story-photo figcaption,.contact-workplace-photo figcaption{position:absolute;right:12px;bottom:12px;padding:5px 8px;border-radius:4px;background:#142f36d9;color:white;font-size:10px;line-height:1.3}
+.about-story-photo{position:relative;min-height:475px;margin:0;border-radius:12px;overflow:hidden;background:#e4e9e4}
+.about-story-photo img,.contact-workplace-photo img{object-fit:cover}
+.contact-workplace-photo{position:relative;height:235px;margin:25px 0 10px;border-radius:10px;overflow:hidden;background:#e4e9e4}
+@media(max-width:950px){.service-media-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.detail-photo{height:340px}}
+@media(max-width:750px){.service-media-grid{grid-template-columns:1fr}.service-media-image{height:225px}.service-media-body{padding:20px}.service-media-body h2{font-size:21px}.detail-photo{height:280px}.about-story-photo{min-height:350px}.contact-workplace-photo{height:230px}}

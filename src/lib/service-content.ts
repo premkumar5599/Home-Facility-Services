@@ -3,7 +3,7 @@ import type { Question } from '@/components/faq';
 type Content = { intro: string; suitableFor: string; planning: string[]; faqs: Question[] };
 export const serviceContent: Record<Service['slug'], Content> = {
   housekeeping: {
-    intro: 'Housekeeping services in Chennai for offices and commercial premises',
+    intro: 'Housekeeping services in Chennai, Vellore and Hosur for offices and commercial premises',
     suitableFor: 'Facility managers planning everyday cleaning support for offices, retail premises, hospitality spaces, multi-storey buildings and shared areas. Healthcare and food-industry requirements should be discussed separately so that site-specific hygiene instructions are clear.',
     planning: ['Identify the areas to be covered: workspaces, common areas, washrooms and visitor-facing spaces.', 'Share your operating hours and when cleaning can take place without interrupting your team.', 'Discuss staffing, cleaning frequency, equipment and consumables before agreeing the scope.', 'Explain access restrictions and any site-specific hygiene procedures.'],
     faqs: [
@@ -13,7 +13,7 @@ export const serviceContent: Record<Service['slug'], Content> = {
     ],
   },
   security: {
-    intro: 'Security personnel services for Chennai business premises',
+    intro: 'Security personnel services for business premises in Chennai, Vellore and Hosur',
     suitableFor: 'Businesses seeking personnel support for offices, commercial buildings and other facilities. Requirements differ by site, so the number of positions, shift pattern and responsibilities need to be agreed with your management team.',
     planning: ['Describe the premises and the locations where personnel are needed.', 'Explain visitor, staff and vehicle movement during operating hours.', 'Discuss shift coverage, site instructions and escalation contacts.', 'Confirm the required checks, documentation and service responsibilities directly with HFS.'],
     faqs: [
@@ -23,7 +23,7 @@ export const serviceContent: Record<Service['slug'], Content> = {
     ],
   },
   'water-wash': {
-    intro: 'Vehicle water wash support for business locations in Chennai',
+    intro: 'Vehicle water wash support for business locations in Chennai, Vellore and Hosur',
     suitableFor: 'Businesses planning vehicle washing support at their premises, including automotive sites. Describing vehicle volumes and the available working space helps the team understand the assignment.',
     planning: ['Share the vehicle types and approximate number of washes required.', 'Describe the wash area, water access and drainage arrangements.', 'Discuss suitable working times and how vehicles move through the location.', 'Confirm equipment, consumables and the exact cleaning scope before work is agreed.'],
     faqs: [
@@ -33,7 +33,7 @@ export const serviceContent: Record<Service['slug'], Content> = {
     ],
   },
   plumbing: {
-    intro: 'Plumbing support for facilities and workplaces in Chennai',
+    intro: 'Plumbing support for facilities and workplaces in Chennai, Vellore and Hosur',
     suitableFor: 'Facility teams looking for plumbing personnel or support for property maintenance needs. A clear description of the affected area and operational impact helps establish the right scope.',
     planning: ['Describe the plumbing requirement and the parts of the facility affected.', 'Explain access restrictions and times when the work can be discussed or scheduled.', 'Share existing maintenance information where available.', 'Confirm materials, replacement parts, personnel and the scope of work in the quotation.'],
     faqs: [
@@ -43,7 +43,7 @@ export const serviceContent: Record<Service['slug'], Content> = {
     ],
   },
   'electrical-maintenance': {
-    intro: 'Electrical maintenance support for Chennai workplaces',
+    intro: 'Electrical maintenance support for workplaces in Chennai, Vellore and Hosur',
     suitableFor: 'Businesses coordinating electrical maintenance personnel and facility support. Share the systems involved and your site’s access and work-authorisation requirements so the request can be assessed.',
     planning: ['Describe the maintenance requirement and the equipment or area involved.', 'Identify your site contact and any work-permit or access requirements.', 'Discuss acceptable work windows and operational constraints.', 'Confirm the assigned personnel, relevant qualifications, materials and agreed scope before work begins.'],
     faqs: [
@@ -53,19 +53,20 @@ export const serviceContent: Record<Service['slug'], Content> = {
     ],
   },
   staffing: {
-    intro: 'Facility staffing and outsourcing support from Chennai',
-    suitableFor: 'Businesses seeking housekeeping, security or technical personnel on permanent or temporary arrangements. The company profile also describes nationwide staff supply; availability for a particular location should be confirmed directly.',
+    intro: 'Facility staffing and outsourcing support in Chennai, Vellore and Hosur',
+    suitableFor: 'Businesses seeking housekeeping, security or technical personnel on permanent or temporary arrangements. HFS serves Chennai, Vellore and Hosur; discuss your site requirements with the team.',
     planning: ['List the roles, duties and approximate number of people required.', 'Share the location, working hours and expected duration of the assignment.', 'Explain the skills, training or site induction requirements for each role.', 'Discuss reporting lines, staffing arrangements and the proposed start date.'],
     faqs: [
       { question: 'Can I request temporary as well as permanent staffing?', answer: 'Yes. The HFS company profile describes permanent and temporary staff supply. The available roles, duration and terms should be confirmed for your requirement.' },
       { question: 'Which types of personnel are listed?', answer: 'The profile identifies housekeeping personnel, security officers and technicians. Share the responsibilities you need covered so HFS can assess a suitable staffing arrangement.' },
-      { question: 'Can HFS discuss staffing outside Chennai?', answer: 'The profile describes nationwide staff supply capability. Ask the team to confirm feasibility, current availability and arrangements for your specific location.' },
+      { question: 'Can HFS discuss staffing outside Chennai?', answer: 'Yes. HFS provides services in Chennai, Vellore and Hosur. Contact the team to discuss your staffing needs and site arrangements.' },
     ],
   },
 };
 export const generalFAQs: Question[] = [
+  { question: 'Which locations does HFS serve?', answer: 'Home Facility Services provides services in Chennai, Vellore and Hosur. Share your site location and requirements with our team to discuss the service arrangement.' },
   { question: 'Where is Home Facility Services based?', answer: 'HFS is based in Chennai, Tamil Nadu. The registered office is No. 01, Perumal Kovil Street, Koyambedu, Chennai – 600 107.' },
   { question: 'Can I request more than one facility service?', answer: 'Yes. You can discuss housekeeping, security, water wash, plumbing, electrical maintenance and staffing together. The team will need your site requirements to confirm a suitable scope.' },
-  { question: 'How do I request pricing?', answer: 'Call +91 80720 07850 or email hr@homefacilityservices.in with your location, facility type, services, staffing needs and preferred schedule. Pricing is discussed for your requirements; no standard rates are published here.' },
+  { question: 'How do I request pricing?', answer: 'Call 7708241218 or landline 044-46406372, or email hr@homefacilityservices.in with your location, facility type, services, staffing needs and preferred schedule. Pricing is discussed for your requirements; no standard rates are published here.' },
   { question: 'Does submitting the enquiry form confirm a booking?', answer: 'No. The form prepares a message in your email app, which you review and send yourself. A service is only arranged after you discuss and agree the scope, availability and terms with HFS.' },
 ];

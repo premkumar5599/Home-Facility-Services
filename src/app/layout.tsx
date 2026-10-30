@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ['latin'], display: 'swap' });
 export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin),
   title: { default: 'Home Facility Services | Care for your workplace', template: '%s | Home Facility Services' },
-  description: 'Chennai-based facility services for businesses: housekeeping, security, water wash, plumbing, electrical maintenance and staffing.',
+  description: 'Facility services in Chennai, Vellore and Hosur: housekeeping, security, water wash, plumbing, electrical maintenance and staffing.',
   robots: { index: indexable, follow: indexable },
   publisher: 'Home Facility Services',
   icons: { icon: '/assets/profile-image1.jpeg' },

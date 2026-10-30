@@ -1,18 +1,18 @@
+import { CompanyStats } from '@/components/company-stats';
 import { pageMetadata } from '@/lib/seo';
 import { FAQ } from '@/components/faq';
 import { generalFAQs } from '@/lib/service-content';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowDown, ArrowUpRight, Check, ShieldCheck, Sparkles } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Check } from 'lucide-react';
 import { ButtonLink, CTA, Eyebrow, ServiceCard } from '@/components/ui';
 import { services, steps } from '@/lib/data';
 import { ScrollReveal } from '@/components/scroll-reveal';
-import { AnimatedCounter } from '@/components/animated-counter';
 import { LogoMarquee } from '@/components/logo-marquee';
 
 export const metadata = pageMetadata(
-  'Facility Management Services in Chennai',
-  'Home Facility Services provides housekeeping, security, water wash, plumbing, electrical maintenance and staffing support. Discuss your Chennai facility needs.',
+  'Facility Services in Chennai, Vellore & Hosur',
+  'Home Facility Services provides housekeeping, security, water wash, plumbing, electrical maintenance and staffing support. Serving Chennai, Vellore and Hosur.',
   '/'
 );
 
@@ -22,15 +22,14 @@ export default function Home() {
       <section className="hero">
         <div className="container hero-grid">
           <div className="hero-copy">
-            <Eyebrow>FACILITY MANAGEMENT SERVICES IN CHENNAI</Eyebrow>
+            <Eyebrow>SERVING CHENNAI, VELLORE & HOSUR</Eyebrow>
             <h1>
               Great spaces.<br />
               Better working<br />
               <span>days.</span>
-              <span className="heading-dot">✳</span>
             </h1>
             <p>
-              Housekeeping, security, maintenance and staffing support from Home Facility Services, Chennai. We take care of your premises so you can focus on your business.
+              Housekeeping, security, maintenance and staffing support in Chennai, Vellore and Hosur. We take care of your premises so you can focus on your business.
             </p>
             <div className="hero-actions">
               <ButtonLink href="/contact/">Find your facility solution</ButtonLink>
@@ -43,35 +42,16 @@ export default function Home() {
               <span><Check size={14} /> Flexible services</span>
               <span><Check size={14} /> Chennai based</span>
             </div>
+            <CompanyStats variant="hero" />
           </div>
-          <div className="hero-art">
-            <div className="art-caption">
-              <span className="live-dot" /> CARE IN EVERY DETAIL <span>HFS / 01</span>
+          <div className="home-hero-visual">
+            <div className="home-hero-main">
+              <Image src="/assets/home/workplace.jpg" alt="Bright modern workplace atrium" fill priority sizes="(max-width: 750px) 100vw, 46vw" />
             </div>
-            <div className="hero-image">
-              <Image
-                src="/assets/profile-image2.jpeg"
-                alt="Housekeeping professional with cleaning equipment from the HFS company profile"
-                fill
-                priority
-                sizes="(max-width: 750px) 90vw, 45vw"
-              />
-              <div className="image-label">
-                <Sparkles size={15} /> Spaces that feel cared for.
-              </div>
+            <div className="home-hero-inset">
+              <Image src="/assets/home/cleaning.jpg" alt="Cleaner maintaining a workplace corridor" fill sizes="(max-width: 750px) 43vw, 17vw" />
             </div>
-            <div className="hero-art-footer">
-              <div>
-                <span>ONE PARTNER, EVERYDAY SUPPORT</span>
-                <strong>Good people. Great care.</strong>
-              </div>
-              <ArrowUpRight size={30} strokeWidth={1} />
-            </div>
-            <div className="floating-stat">
-              <ShieldCheck size={22} />
-              <strong><AnimatedCounter value={350} suffix="+" /></strong>
-              <p>people behind<br />better spaces*</p>
-            </div>
+            <p className="home-photo-note">Illustrative workplace photography</p>
           </div>
         </div>
         <div className="container sectors-strip">
@@ -80,25 +60,55 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="home-photo-services section" aria-labelledby="home-photo-services-title">
+        <div className="container">
+          <div className="section-heading home-reveal">
+            <div>
+              <Eyebrow>SUPPORT FOR WORKING SPACES</Eyebrow>
+              <h2 id="home-photo-services-title">The details people notice.<br /><span className="muted-heading">The support you can count on.</span></h2>
+            </div>
+            <p>From daily upkeep to specialist personnel, HFS helps businesses keep their facilities ready for the people who use them.</p>
+          </div>
+          <div className="home-photo-grid">
+            <Link href="/services/housekeeping/" className="home-photo-card home-reveal">
+              <Image src="/assets/home/cleaning.jpg" alt="Cleaner maintaining an indoor corridor" fill sizes="(max-width: 750px) 100vw, 32vw" />
+              <small>01 / 06</small>
+              <span><strong>Housekeeping</strong><ArrowUpRight size={20} /></span>
+            </Link>
+            <Link href="/services/water-wash/" className="home-photo-card home-reveal">
+              <Image src="/assets/services/water-wash.jpg" alt="Worker washing a vehicle" fill sizes="(max-width: 750px) 100vw, 32vw" />
+              <small>02 / 06</small>
+              <span><strong>Vehicle water wash</strong><ArrowUpRight size={20} /></span>
+            </Link>
+            <Link href="/services/staffing/" className="home-photo-card home-reveal">
+              <Image src="/assets/home/workplace.jpg" alt="Modern workplace atrium" fill sizes="(max-width: 750px) 100vw, 32vw" />
+              <small>03 / 06</small>
+              <span><strong>Staffing &amp; site support</strong><ArrowUpRight size={20} /></span>
+            </Link>
+          </div>
+          <p className="home-photo-disclaimer">Photos illustrate service environments and do not depict HFS personnel or client sites.</p>
+        </div>
+      </section>
+
       <ScrollReveal>
         <section className="section">
           <div className="container">
-            <div className="section-heading fade-up">
+            <div className="section-heading home-reveal">
               <div>
                 <Eyebrow>WHAT WE TAKE CARE OF</Eyebrow>
-                <h2>All the essentials.<br /><span className="muted-heading">One dependable partner.</span></h2>
+              <h2>More ways we support<br /><span className="muted-heading">your everyday operations.</span></h2>
               </div>
               <div>
-                <p>People and practical expertise to keep your premises working at their best.</p>
+                <p>Specialist people and practical expertise for the systems and spaces your business relies on.</p>
                 <Link className="text-link" href="/services/">
                   Discover all services <ArrowUpRight size={17} />
                 </Link>
               </div>
             </div>
             <div className="services-grid">
-              {services.map((s, i) => (
-                <div className="fade-up" key={s.slug} style={{ transitionDelay: `${i * 50}ms` }}>
-                  <ServiceCard service={s} index={i} />
+              {services.filter(s => ['security', 'plumbing', 'electrical-maintenance'].includes(s.slug)).map((s, i) => (
+                <div className="home-reveal" key={s.slug}>
+                  <ServiceCard service={s} index={i + 3} />
                 </div>
               ))}
             </div>
@@ -109,18 +119,18 @@ export default function Home() {
       <ScrollReveal>
         <section className="section approach-section">
           <div className="container approach-grid">
-            <div className="fade-up">
+            <div className="home-reveal">
               <Eyebrow>THE HFS WAY</Eyebrow>
               <h2>Built around your space.<br /><span className="muted-heading">Focused on your people.</span></h2>
               <p className="section-intro">
                 A well-managed facility makes a difference to everyone who walks through the door. We&apos;re here to make that happen.
               </p>
               <ButtonLink href="/about/" secondary>Get to know HFS</ButtonLink>
-              <p className="stat-footnote">*Approximate workforce stated in the supplied company profile.</p>
+              
             </div>
             <div className="steps">
               {steps.map((s, i) => (
-                <div className="step fade-up" key={s.title} style={{ transitionDelay: `${i * 60}ms` }}>
+                <div className="step home-reveal" key={s.title}>
                   <span>0{i + 1}</span>
                   <div>
                     <h3>{s.title}</h3>
@@ -136,7 +146,7 @@ export default function Home() {
       <ScrollReveal>
         <section className="section">
           <div className="container">
-            <div className="section-heading fade-up">
+            <div className="section-heading home-reveal">
               <div>
                 <Eyebrow>IN GOOD COMPANY</Eyebrow>
                 <h2>Across industries.<br />Around your needs.</h2>
@@ -145,7 +155,7 @@ export default function Home() {
                 Explore our client portfolio <ArrowUpRight size={17} />
               </Link>
             </div>
-            <div className="fade-up">
+            <div className="home-reveal">
               <LogoMarquee />
             </div>
           </div>
@@ -154,7 +164,7 @@ export default function Home() {
 
       <ScrollReveal>
         <section className="section soft-section">
-          <div className="container split-heading fade-up">
+          <div className="container split-heading home-reveal">
             <div>
               <Eyebrow>START WITH A CLEAR BRIEF</Eyebrow>
               <h2>Planning facility support?<br />Here&apos;s what to prepare.</h2>
@@ -171,10 +181,10 @@ export default function Home() {
         </section>
       </ScrollReveal>
 
-      <div className="fade-up">
+      <div className="home-reveal">
         <FAQ title="Facility services: your questions answered" items={generalFAQs} />
       </div>
-      <div className="fade-up">
+      <div className="home-reveal">
         <CTA />
       </div>
     </>

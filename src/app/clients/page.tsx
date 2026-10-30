@@ -5,7 +5,7 @@ import { CTA, PageHero } from '@/components/ui';
 
 export const metadata: Metadata = pageMetadata(
   'Client Portfolio Across Industries',
-  'Explore the HFS client portfolio across automotive, healthcare, manufacturing, hospitality and residential facilities, with filters by industry.',
+  'Browse the HFS client list across automobile, corporate offices, factory, healthcare, residential, restaurants and retail, with filters by sector.',
   '/clients/'
 );
 
@@ -15,7 +15,7 @@ export default function Clients() {
       <PageHero
         label="Our clients"
         title="Different industries. A shared standard of care."
-        description="Explore a selection from the HFS client portfolio, from automotive and healthcare to hospitality and residential communities."
+        description="Explore our complete supplied client list across automobile, corporate offices, factories, healthcare, residential, restaurants and retail."
       />
       <section className="section">
         <div className="container">

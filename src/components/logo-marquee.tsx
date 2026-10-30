@@ -10,7 +10,7 @@ export function LogoMarquee() {
     <div className="logo-marquee">
       <div className="logo-track">
         {items.map((c, i) => (
-          <div className="logo-marquee-item" key={`${c.name}-${i}`}>
+          <div className="logo-marquee-item" key={`${c.name}-${i}`} aria-hidden={i >= clients.length ? true : undefined}>
             <Image src={`/assets/${c.image}`} alt={c.name} width={140} height={85} style={{ width: 'auto', height: 'auto' }} />
           </div>
         ))}

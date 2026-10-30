@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { company } from './data';
+import { company, serviceCities } from './data';
 
 const configuredOrigin = process.env.SITE_URL;
 export const siteOrigin = new URL(configuredOrigin || 'https://home-facility-services.cosmicdrake16.chatgpt.site').origin;
@@ -20,7 +20,8 @@ export const businessSchema = {
   '@context': 'https://schema.org', '@type': 'LocalBusiness', '@id': absoluteUrl('/#business'),
   name: company.name, url: absoluteUrl('/'), telephone: company.telephone, email: company.email,
   logo: absoluteUrl('/assets/profile-image1.jpeg'), image: absoluteUrl('/assets/profile-image1.jpeg'),
-  description: 'Chennai-based housekeeping, security, water wash, plumbing, electrical maintenance and staffing services.',
+  description: 'Housekeeping, security, water wash, plumbing, electrical maintenance and staffing services in Chennai, Vellore and Hosur.',
   address: { '@type': 'PostalAddress', streetAddress: 'No. 01, Perumal Kovil Street, Koyambedu', addressLocality: 'Chennai', addressRegion: 'Tamil Nadu', postalCode: '600107', addressCountry: 'IN' },
-  areaServed: { '@type': 'City', name: 'Chennai' },
+  areaServed: serviceCities.map(name => ({ '@type': 'City', name })),
+  contactPoint: [{ '@type': 'ContactPoint', telephone: company.telephone, contactType: 'customer service' }, { '@type': 'ContactPoint', telephone: company.landlineTelephone, contactType: 'customer service' }],
 };
