@@ -4,20 +4,35 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "dev:enquiries:test": "node server/start.mjs --test-mode",
+    "start:enquiries": "node server/start.mjs",
+    "test:enquiries": "node --test server/*.test.mjs",
+    "generate:enquiry-key": "node server/generate-key.mjs",
+    "predev": "node scripts/prepare-images.mjs",
+    "build": "node scripts/prepare-images.mjs && next build --webpack",
+    "build:production": "node scripts/build-production.mjs",
+    "audit:production": "node scripts/audit-production.mjs",
     "typecheck": "tsc --noEmit",
-    "check:seo": "node scripts/check-seo.mjs"
+    "check:seo": "node scripts/check-seo.mjs",
+    "format": "prettier --no-error-on-unmatched-pattern --write src scripts tests server *.json *.ts *.md docs SEO/*.md",
+    "format:check": "prettier --no-error-on-unmatched-pattern --check src scripts tests server *.json *.ts *.md docs SEO/*.md",
+    "check:content": "node scripts/check-client-corrections.mjs",
+    "test:browser": "playwright test"
   },
   "dependencies": {
+    "lucide-react": "^0.468.0",
     "next": "16.4.3",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "lucide-react": "^0.468.0"
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "typescript": "^5.7.0",
+    "@playwright/test": "1.65.0",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0"
+    "@types/react-dom": "^19.0.0",
+    "lighthouse": "13.5.0",
+    "prettier": "3.9.10",
+    "sharp": "0.35.5",
+    "typescript": "^5.7.0"
   }
 }

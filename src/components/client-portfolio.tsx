@@ -1,18 +1,28 @@
-'use client';
-import { useState } from 'react';
-import Image from 'next/image';
-import { clients } from '@/lib/data';
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+import { imageDimensions } from "@/lib/image-dimensions";
+import { clients } from "@/lib/data";
 
-const categories = ['All clients', ...Array.from(new Set(clients.map(c => c.category)))];
+const categories = [
+  "All clients",
+  ...Array.from(new Set(clients.map((c) => c.category))),
+];
 
 export function ClientPortfolio() {
-  const [category, setCategory] = useState('All clients');
-  const visible = clients.filter(c => category === 'All clients' || c.category === category);
+  const [category, setCategory] = useState("All clients");
+  const visible = clients.filter(
+    (c) => category === "All clients" || c.category === category,
+  );
 
   return (
     <>
-      <div className="filters fade-up" role="group" aria-label="Filter clients by industry">
-        {categories.map(c => (
+      <div
+        className="filters fade-up"
+        role="group"
+        aria-label="Filter clients by industry"
+      >
+        {categories.map((c) => (
           <button
             type="button"
             key={c}
@@ -24,7 +34,10 @@ export function ClientPortfolio() {
         ))}
       </div>
       <p className="result-count fade-up" role="status">
-        Showing {visible.length} {category === 'All clients' ? 'clients' : category.toLowerCase() + ' clients'}
+        Showing {visible.length}{" "}
+        {category === "All clients"
+          ? "clients"
+          : category.toLowerCase() + " clients"}
       </p>
       <div className="portfolio-grid">
         {visible.map((c, i) => (
@@ -37,9 +50,8 @@ export function ClientPortfolio() {
               <Image
                 src={`/assets/${c.image}`}
                 alt={c.name}
-                width={160}
-                height={100}
-                style={{ width: 'auto', height: 'auto' }}
+                {...imageDimensions(`/assets/${c.image}`)}
+                sizes="160px"
               />
             </div>
             <p>{c.category}</p>

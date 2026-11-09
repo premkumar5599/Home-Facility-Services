@@ -1,0 +1,272 @@
+{
+  "/assets/clients/automobile-image1.jpeg": {
+    "width": 225,
+    "height": 225,
+    "widths": [48, 64, 96, 160, 225],
+    "hash": "b0c48fbcb82925a8"
+  },
+  "/assets/clients/automobile-image10.png": {
+    "width": 389,
+    "height": 261,
+    "widths": [48, 64, 96, 160, 320, 389],
+    "hash": "25104db3e3db64f8"
+  },
+  "/assets/clients/automobile-image11.png": {
+    "width": 225,
+    "height": 225,
+    "widths": [48, 64, 96, 160, 225],
+    "hash": "5892ebe2ee823e00"
+  },
+  "/assets/clients/automobile-image12.png": {
+    "width": 298,
+    "height": 266,
+    "widths": [48, 64, 96, 160, 298],
+    "hash": "e791bee18c446cbe"
+  },
+  "/assets/clients/automobile-image13.jpeg": {
+    "width": 200,
+    "height": 200,
+    "widths": [48, 64, 96, 160, 200],
+    "hash": "adecfc53455ad38d"
+  },
+  "/assets/clients/automobile-image14.jpeg": {
+    "width": 225,
+    "height": 225,
+    "widths": [48, 64, 96, 160, 225],
+    "hash": "8d16ec8639ffb1fa"
+  },
+  "/assets/clients/automobile-image2.png": {
+    "width": 900,
+    "height": 639,
+    "widths": [48, 64, 96, 160, 320, 480, 640, 900],
+    "hash": "e5de735fe81b1e76"
+  },
+  "/assets/clients/automobile-image3.jpeg": {
+    "width": 365,
+    "height": 260,
+    "widths": [48, 64, 96, 160, 320, 365],
+    "hash": "4392f11b3e679bb3"
+  },
+  "/assets/clients/automobile-image4.jpeg": {
+    "width": 200,
+    "height": 200,
+    "widths": [48, 64, 96, 160, 200],
+    "hash": "7a7270910ce02673"
+  },
+  "/assets/clients/automobile-image5.png": {
+    "width": 225,
+    "height": 225,
+    "widths": [48, 64, 96, 160, 225],
+    "hash": "0fe8ea50b8cd85b0"
+  },
+  "/assets/clients/automobile-image6.png": {
+    "width": 281,
+    "height": 179,
+    "widths": [48, 64, 96, 160, 281],
+    "hash": "32d0adf956f8b6f0"
+  },
+  "/assets/clients/automobile-image7.jpeg": {
+    "width": 286,
+    "height": 238,
+    "widths": [48, 64, 96, 160, 286],
+    "hash": "875fbd1c3aac5ba2"
+  },
+  "/assets/clients/automobile-image8.png": {
+    "width": 316,
+    "height": 203,
+    "widths": [48, 64, 96, 160, 316],
+    "hash": "46e96dfa2f93ca25"
+  },
+  "/assets/clients/automobile-image9.png": {
+    "width": 200,
+    "height": 124,
+    "widths": [48, 64, 96, 160, 200],
+    "hash": "c7f2990c8db5b957"
+  },
+  "/assets/clients/corporate-offices-image1.png": {
+    "width": 364,
+    "height": 227,
+    "widths": [48, 64, 96, 160, 320, 364],
+    "hash": "28fbfd6ec9b2b2e2"
+  },
+  "/assets/clients/corporate-offices-image2.jpeg": {
+    "width": 304,
+    "height": 254,
+    "widths": [48, 64, 96, 160, 304],
+    "hash": "3d7355f7b145f1e8"
+  },
+  "/assets/clients/corporate-offices-image3.jpg": {
+    "width": 200,
+    "height": 200,
+    "widths": [48, 64, 96, 160, 200],
+    "hash": "c4802f45df366ff8"
+  },
+  "/assets/clients/corporate-offices-image4.png": {
+    "width": 340,
+    "height": 271,
+    "widths": [48, 64, 96, 160, 320, 340],
+    "hash": "f0f858670660e216"
+  },
+  "/assets/clients/corporate-offices-image5.jpeg": {
+    "width": 225,
+    "height": 225,
+    "widths": [48, 64, 96, 160, 225],
+    "hash": "79894ad51ff68fca"
+  },
+  "/assets/clients/factory-image1.jpg": {
+    "width": 425,
+    "height": 118,
+    "widths": [48, 64, 96, 160, 320, 425],
+    "hash": "c0f45304ad5de15e"
+  },
+  "/assets/clients/factory-image2.png": {
+    "width": 152,
+    "height": 148,
+    "widths": [48, 64, 96, 152],
+    "hash": "55ec5554d60fa19a"
+  },
+  "/assets/clients/hospitality-image1.jpg": {
+    "width": 379,
+    "height": 73,
+    "widths": [48, 64, 96, 160, 320, 379],
+    "hash": "c43ac17d5c082694"
+  },
+  "/assets/clients/hospitality-image2.jpeg": {
+    "width": 225,
+    "height": 225,
+    "widths": [48, 64, 96, 160, 225],
+    "hash": "dec4e430531daf54"
+  },
+  "/assets/clients/residential-image1.png": {
+    "width": 225,
+    "height": 225,
+    "widths": [48, 64, 96, 160, 225],
+    "hash": "d2c6f54e7cc7a129"
+  },
+  "/assets/clients/residential-image2.jpeg": {
+    "width": 256,
+    "height": 142,
+    "widths": [48, 64, 96, 160, 256],
+    "hash": "66e0ad2762976e97"
+  },
+  "/assets/clients/residential-image3.jpeg": {
+    "width": 310,
+    "height": 242,
+    "widths": [48, 64, 96, 160, 310],
+    "hash": "0098457063e0fc21"
+  },
+  "/assets/clients/restaurents-image1.jpeg": {
+    "width": 224,
+    "height": 225,
+    "widths": [48, 64, 96, 160, 224],
+    "hash": "b9617bb70dd5d443"
+  },
+  "/assets/clients/restaurents-image2.png": {
+    "width": 228,
+    "height": 221,
+    "widths": [48, 64, 96, 160, 228],
+    "hash": "a0618819866d96b5"
+  },
+  "/assets/clients/restaurents-image3.png": {
+    "width": 225,
+    "height": 225,
+    "widths": [48, 64, 96, 160, 225],
+    "hash": "96741acf07e8a13d"
+  },
+  "/assets/clients/retail-image1.png": {
+    "width": 374,
+    "height": 320,
+    "widths": [48, 64, 96, 160, 320, 374],
+    "hash": "cd562babf53ef232"
+  },
+  "/assets/clients/retail-image2.jpeg": {
+    "width": 293,
+    "height": 248,
+    "widths": [48, 64, 96, 160, 293],
+    "hash": "4c5d0bbb9063f3c9"
+  },
+  "/assets/clients/retail-image3.png": {
+    "width": 355,
+    "height": 142,
+    "widths": [48, 64, 96, 160, 320, 355],
+    "hash": "6666e13611e96ad5"
+  },
+  "/assets/founders/kannan-enhanced.webp": {
+    "width": 800,
+    "height": 1000,
+    "widths": [48, 64, 96, 160, 320, 480, 640, 800],
+    "hash": "d35f839a0816ec88"
+  },
+  "/assets/founders/mugunthan-enhanced.webp": {
+    "width": 800,
+    "height": 965,
+    "widths": [48, 64, 96, 160, 320, 480, 640, 800],
+    "hash": "bd9643877ff3ccd2"
+  },
+  "/assets/founders/sai-dhinesh-enhanced.webp": {
+    "width": 800,
+    "height": 1000,
+    "widths": [48, 64, 96, 160, 320, 480, 640, 800],
+    "hash": "165163741cb09d64"
+  },
+  "/assets/founders/srinivasan-enhanced.webp": {
+    "width": 800,
+    "height": 1000,
+    "widths": [48, 64, 96, 160, 320, 480, 640, 800],
+    "hash": "0feb194c88b276ab"
+  },
+  "/assets/home/workplace.jpg": {
+    "width": 1500,
+    "height": 1125,
+    "widths": [48, 64, 96, 160, 320, 480, 640, 960, 1280],
+    "hash": "fd354f2dc180ddce"
+  },
+  "/assets/inner/workplace-lobby.jpg": {
+    "width": 1400,
+    "height": 933,
+    "widths": [48, 64, 96, 160, 320, 480, 640, 960, 1280],
+    "hash": "2b937abe9dacc53a"
+  },
+  "/assets/profile-image1.jpeg": {
+    "width": 213,
+    "height": 200,
+    "widths": [48, 64, 96, 160, 213],
+    "hash": "2fd52fb79ffcd4af"
+  },
+  "/assets/services/electrical.png": {
+    "width": 1200,
+    "height": 900,
+    "widths": [48, 64, 96, 160, 320, 480, 640, 960, 1200],
+    "hash": "90cb1c9b07ef29e1"
+  },
+  "/assets/services/plumbing.jpg": {
+    "width": 1200,
+    "height": 900,
+    "widths": [48, 64, 96, 160, 320, 480, 640, 960, 1200],
+    "hash": "3a5faff951b5cf04"
+  },
+  "/assets/services/security.jpg": {
+    "width": 1200,
+    "height": 824,
+    "widths": [48, 64, 96, 160, 320, 480, 640, 960, 1200],
+    "hash": "b6d78efc6cdad3ad"
+  },
+  "/assets/services/water-wash.jpg": {
+    "width": 1200,
+    "height": 800,
+    "widths": [48, 64, 96, 160, 320, 480, 640, 960, 1200],
+    "hash": "2ef97463123edd57"
+  },
+  "/assets/stock/housekeeping-team.jpg": {
+    "width": 1600,
+    "height": 1067,
+    "widths": [48, 64, 96, 160, 320, 480, 640, 960, 1280],
+    "hash": "b41129119174826f"
+  },
+  "/assets/stock/team-meeting.jpg": {
+    "width": 1600,
+    "height": 1067,
+    "widths": [48, 64, 96, 160, 320, 480, 640, 960, 1280],
+    "hash": "f307b09326d9da8f"
+  }
+}

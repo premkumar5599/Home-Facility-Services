@@ -1,6 +1,5 @@
-'use client';
-import { MessageCircle } from 'lucide-react';
-import { company } from '@/lib/data';
+import { MessageCircle } from "lucide-react";
+import { company } from "@/lib/data";
 
 /** Floating WhatsApp contact button */
 export function WhatsAppButton() {

@@ -1,5 +1,5 @@
-'use client';
-import { useEffect, useRef } from 'react';
+"use client";
+import { useEffect, useRef } from "react";
 
 /**
  * High-performance animated counter.
@@ -8,7 +8,7 @@ import { useEffect, useRef } from 'react';
  */
 export function AnimatedCounter({
   value,
-  suffix = '',
+  suffix = "",
   duration = 1000,
 }: {
   value: number;
@@ -21,7 +21,9 @@ export function AnimatedCounter({
     const el = ref.current;
     if (!el) return;
 
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (prefersReduced) {
       el.textContent = `${value}${suffix}`;
       return;
@@ -55,7 +57,7 @@ export function AnimatedCounter({
           frameId = requestAnimationFrame(animate);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     observer.observe(el);

@@ -1,6 +1,6 @@
-'use client';
-import { useEffect } from 'react';
-import { usePathname } from 'next/navigation';
+"use client";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 /**
  * High-performance global scroll-reveal observer.
@@ -10,11 +10,15 @@ export function ScrollAnimationProvider() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const targets = document.querySelectorAll<HTMLElement>('.fade-up:not(.in-view), .fade-in:not(.in-view), .home-reveal:not(.in-view)');
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const targets = document.querySelectorAll<HTMLElement>(
+      ".fade-up:not(.in-view), .fade-in:not(.in-view), .home-reveal:not(.in-view)",
+    );
 
     if (prefersReduced) {
-      targets.forEach(el => el.classList.add('in-view'));
+      targets.forEach((el) => el.classList.add("in-view"));
       return;
     }
 
@@ -25,18 +29,18 @@ export function ScrollAnimationProvider() {
         for (let i = 0; i < entries.length; i++) {
           const entry = entries[i];
           if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
+            entry.target.classList.add("in-view");
             observer.unobserve(entry.target);
           }
         }
       },
       {
         threshold: 0.05,
-        rootMargin: '0px 0px -20px 0px',
-      }
+        rootMargin: "0px 0px -20px 0px",
+      },
     );
 
-    targets.forEach(el => observer.observe(el));
+    targets.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, [pathname]);
@@ -45,7 +49,13 @@ export function ScrollAnimationProvider() {
 }
 
 /** Lightweight passthrough wrapper to prevent duplicate observers */
-export function ScrollReveal({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+export function ScrollReveal({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return <div className={className}>{children}</div>;
 }
 
