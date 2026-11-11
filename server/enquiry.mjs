@@ -16,6 +16,7 @@ export async function submitEnquiry(
     from,
     to = "hr@homefacilityservices.in",
     send = fetch,
+    sendMail,
   } = {},
 ) {
   const invalid = {
@@ -51,12 +52,23 @@ export async function submitEnquiry(
     return invalid;
   if (/[\r\n]/.test(data.name + data.email)) return invalid;
   if (testMode) return { status: 200, body: { ok: true, mode: "test" } };
-  if (!apiKey || !from || !to)
+  if ((!sendMail && !apiKey) || !from || !to || from.startsWith("REPLACE_"))
     return {
       status: 503,
       body: { ok: false, error: "Email delivery is not configured." },
     };
   try {
+    const message = {
+      from,
+      to,
+      replyTo: data.email,
+      subject: `Facility service enquiry: ${services[data.service]}`,
+      text: `Name: ${data.name}\nCompany: ${data.company || "Not provided"}\nEmail: ${data.email}\nPhone: ${data.phone || "Not provided"}\nLocation: ${data.location || "Not provided"}\nService: ${services[data.service]}\n\nRequirements:\n${data.message}`,
+    };
+    if (sendMail) {
+      await sendMail(message);
+      return { status: 200, body: { ok: true, mode: "email" } };
+    }
     const response = await send("https://api.resend.com/emails", {
       method: "POST",
       headers: {

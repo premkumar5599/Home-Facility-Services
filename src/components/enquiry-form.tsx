@@ -32,7 +32,7 @@ export function EnquiryForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(encrypted),
         credentials: "omit",
-        signal: AbortSignal.timeout(15000),
+        signal: AbortSignal.timeout(25000),
       });
       const result = await response.json();
       if (!response.ok || result.ok !== true)

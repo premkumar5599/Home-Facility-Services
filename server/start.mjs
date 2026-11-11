@@ -2,6 +2,7 @@ import { createServer } from "node:http";
 import { submitEnquiry } from "./enquiry.mjs";
 import { readFile } from "node:fs/promises";
 import { createEnquiryEncryption } from "./encryption.mjs";
+import { deliveryOptions } from "./smtp.mjs";
 
 const port = Number(process.env.ENQUIRY_PORT || 8787);
 const testMode =
@@ -24,6 +25,7 @@ const allowedOrigins = new Set(
     .map((value) => value.trim()),
 );
 const attempts = new Map();
+const delivery = deliveryOptions(process.env);
 const server = createServer(async (request, response) => {
   const origin = request.headers.origin;
   response.setHeader("Cache-Control", "no-store");
@@ -97,9 +99,7 @@ const server = createServer(async (request, response) => {
       ),
       {
         testMode,
-        apiKey: process.env.RESEND_API_KEY,
-        from: process.env.ENQUIRY_FROM,
-        to: process.env.ENQUIRY_TO || "hr@homefacilityservices.in",
+        ...delivery,
       },
     );
     reply(result.status, result.body);
