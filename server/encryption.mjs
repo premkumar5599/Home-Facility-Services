@@ -8,6 +8,41 @@ import {
 const { subtle } = webcrypto;
 const encoder = new TextEncoder();
 
+function keyError(code, message) {
+  return Object.assign(new Error(message), { code });
+}
+
+function normalizePrivateKey(value) {
+  let pem = value.trim();
+  if (
+    (pem.startsWith('"') && pem.endsWith('"')) ||
+    (pem.startsWith("'") && pem.endsWith("'"))
+  ) {
+    if (pem.startsWith('"')) {
+      try {
+        pem = JSON.parse(pem);
+      } catch {
+        pem = pem.slice(1, -1);
+      }
+    } else pem = pem.slice(1, -1);
+  }
+  pem = pem
+    .replace(/\\r\\n/g, "\n")
+    .replace(/\\n/g, "\n")
+    .replace(/\r\n/g, "\n")
+    .trim();
+  if (
+    !/^-----BEGIN (?:RSA )?PRIVATE KEY-----\n[\s\S]+\n-----END (?:RSA )?PRIVATE KEY-----$/.test(
+      pem,
+    )
+  )
+    throw keyError(
+      "KEY_INVALID_FORMAT",
+      "Copy the complete PEM including BEGIN and END PRIVATE KEY lines",
+    );
+  return pem;
+}
+
 function decode(value, maxBytes) {
   if (
     typeof value !== "string" ||
@@ -28,12 +63,21 @@ export async function createEnquiryEncryption({
   let privateKey;
   let publicKey;
   if (privateKeyPem) {
-    const key = createPrivateKey(privateKeyPem);
+    let key;
+    try {
+      key = createPrivateKey(normalizePrivateKey(privateKeyPem));
+    } catch (error) {
+      if (error.code === "KEY_INVALID_FORMAT") throw error;
+      throw keyError("KEY_INVALID", "Enquiry private key could not be loaded");
+    }
     if (
       key.asymmetricKeyType !== "rsa" ||
       key.asymmetricKeyDetails.modulusLength < 3072
     )
-      throw new Error("Enquiry key must be RSA with at least 3072 bits");
+      throw keyError(
+        "KEY_WEAK",
+        "Enquiry key must be RSA with at least 3072 bits",
+      );
     privateKey = await subtle.importKey(
       "pkcs8",
       key.export({ type: "pkcs8", format: "der" }),
@@ -60,7 +104,8 @@ export async function createEnquiryEncryption({
       ["encrypt", "decrypt"],
     ));
   } else {
-    throw new Error(
+    throw keyError(
+      "KEY_MISSING",
       "Configure ENQUIRY_PRIVATE_KEY or ENQUIRY_PRIVATE_KEY_FILE before starting email mode",
     );
   }

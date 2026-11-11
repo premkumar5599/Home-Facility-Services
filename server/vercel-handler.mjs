@@ -61,11 +61,20 @@ export function createVercelHandler(env = process.env, dependencies = {}) {
       // Both functions must use the same persistent PEM key, including after
       // cold starts. Never generate an ephemeral production key here.
       encryption ||= createEnquiryEncryption({
-        privateKeyPem: env.ENQUIRY_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+        privateKeyPem: env.ENQUIRY_PRIVATE_KEY,
       });
       crypto = await encryption;
-    } catch {
+    } catch (error) {
       encryption = undefined;
+      const code = [
+        "KEY_MISSING",
+        "KEY_INVALID_FORMAT",
+        "KEY_INVALID",
+        "KEY_WEAK",
+      ].includes(error.code)
+        ? error.code
+        : "KEY_INITIALIZATION_FAILED";
+      console.error(`Enquiry encryption configuration: ${code}`);
       return reply(503, {
         ok: false,
         error: "Enquiry service is not configured.",

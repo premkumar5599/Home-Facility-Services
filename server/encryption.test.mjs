@@ -119,3 +119,36 @@ test("email mode requires a private key; stable server keys can decrypt after re
   const envelope = await encrypt(payload, first.descriptor);
   assert.deepEqual(await restarted.decrypt(envelope), payload);
 });
+
+test("private key accepts complete multiline, escaped and quoted env values", async () => {
+  const { privateKey } = generateKeyPairSync("rsa", {
+    modulusLength: 3072,
+    privateKeyEncoding: { type: "pkcs8", format: "pem" },
+    publicKeyEncoding: { type: "spki", format: "pem" },
+  });
+  const expected = (
+    await createEnquiryEncryption({ privateKeyPem: privateKey })
+  ).descriptor.keyId;
+  for (const value of [
+    privateKey.replaceAll("\n", "\\n"),
+    JSON.stringify(privateKey),
+    `"${privateKey.trim()}"`,
+    privateKey.replaceAll("\n", "\r\n"),
+  ]) {
+    assert.equal(
+      (await createEnquiryEncryption({ privateKeyPem: value })).descriptor
+        .keyId,
+      expected,
+    );
+  }
+  await assert.rejects(
+    () =>
+      createEnquiryEncryption({
+        privateKeyPem: "base64-body-without-PEM-headers",
+      }),
+    { code: "KEY_INVALID_FORMAT" },
+  );
+  await assert.rejects(() => createEnquiryEncryption(), {
+    code: "KEY_MISSING",
+  });
+});
